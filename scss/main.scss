@@ -1,0 +1,88 @@
+@import 'config';
+@import 'home';
+@import 'menu';
+@import 'about';
+@import 'projects';
+@import 'contact';
+@import 'responsive';
+
+/* FONTS */
+
+@font-face {
+    font-family: 'shapiro5_light_fly';
+    src: url('./fonts/ogj_type_design_-_shapiro_5_light_fly-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_5_light_fly-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'shapiro35_feather_text';
+    src: url('./fonts/ogj_type_design_-_shapiro_35_feather_text-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_35_feather_text-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'shapiro97_air_extd';
+    src: url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100vh;
+    font-family: 'shapiro35_feather_text', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+a {
+    color: set-text-color($primary-color);
+    text-decoration: none;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 1rem;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    .social-icons {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        a {
+            padding: 0.4rem;
+            @include transition-ease;
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+footer {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color: set-text-color($primary-color);
+}

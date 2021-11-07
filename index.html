@@ -23,29 +23,70 @@
         <nav class="nav">
             <ul class="menu-nav">
                 <li class="menu-nav__item active">
-                    <a href="index.html" class="menu-nav__link">
-            Home
-          </a>
+                    <a href="index.html" class="menu-nav__link">Home</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="about.html" class="menu-nav__link">
-            About
-          </a>
+                    <a href="about.html" class="menu-nav__link">About</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="projects.html" class="menu-nav__link">
-            Experts
-          </a>
+                    <a href="projects.html" class="menu-nav__link">Experts</a>
                 </li>
                 <li class="menu-nav__item">
-                    <a href="contact.html" class="menu-nav__link">
-            Contact
-          </a>
+                    <a href="contact.html" class="menu-nav__link">Contact</a>
+                </li>
+                <li class="menu-nav__item">
+                    <a href="#!" class="menu-nav__link signup-btn">Sign Up!</a>
                 </li>
             </ul>
         </nav>
     </header>
-
+    <section id="signup">
+        <form method="post" action="" class="signupform">
+            <ul class="form-nav">
+                <li class="form-nav__item active">
+                    <a class="form-nav__link--title">SIGN UP!</a>
+                </li>
+                <li class="form-nav__item">
+                    <p class="form-nav__item--name">Name</p>
+                    <div class="form-nav__formgroup username">
+                        <label for="name"></label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                </li>
+                <li class="form-nav__item">
+                    <p class="form-nav__item--tag">Gamertag</p>
+                    <div class="form-nav__formgroup gamertag">
+                        <label for="gamertag"></label>
+                        <input id="gamertag" name="gamertag" type="text">
+                    </div>
+                </li>
+                <li class="form-nav__item">
+                    <p class="form-nav__item--email">Email</p>
+                    <div class="form-nav__formgroup useremail">
+                        <label for="email"></label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                </li>
+                <li class="form-nav__item">
+                    <p class="form-nav__item--pass">Password</p>
+                    <div class="form-nav__formgroup userpass">
+                        <label for="password"></label>
+                        <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    </div>
+                </li>
+                <li class="form-nav__item">
+                    <p class="form-nav__item--image">Headshot</p>
+                    <div class="form-nav__formgroup image">
+                        <label for="image"></label>
+                        <input type="file" accept=".jpg,.png,.gif" id="photo">
+                    </div>
+                </li>
+                <li class="form-nav__item">
+                    <button class="form-nav__item--signup">Sign up</button>
+                </li>
+            </ul>
+        </form>
+    </section>
     <main>
         <section class="home">
             <h1><span class="home__name--first"> ELEVATING </span><span class="home__name--last">PERFORMANCE</span></h1>

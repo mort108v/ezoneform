@@ -8,11 +8,11 @@
     background: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3)), url('../img/esport-bgr.jpg') center top;
     background-size: cover;
     &__name--first {
-        font-size: 5rem;
+        font-size: 4rem;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
-        color: $primaryColor;
-        font-family: $shapiro-feather;
+        color: $secondaryColor;
+        font-family: $shapiro-air;
         // border-bottom: 2px solid set-text-color($primaryColor);
     }
     &__name--last {
@@ -20,15 +20,13 @@
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         color: $secondaryColor;
-        // font-weight: 700;
-        font-family: $shapiro-fly;
+        font-family: $shapiro-feather;
     }
     &__name--under {
         font-size: 1.2rem;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         color: $secondaryColor;
-        // font-weight: 700;
         font-family: $shapiro-fly;
     }
     &__under {
@@ -40,7 +38,4 @@
     padding-top: 2.5vh;
     align-items: center;
     text-align: center;
-    // &__logo--svg  {
-    //     fill: $secondaryColor;
-    // }
 }

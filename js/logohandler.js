@@ -27,6 +27,7 @@ function manipulateSVG() {
 
     gSpots = document.querySelectorAll(".g_to_interact_with");
 
+
     gSpots.forEach(gSpot => {
 
         gSpot.style.fill = "#E3E3E5"
@@ -43,7 +44,13 @@ function mouseoverP() {
 
 function mouseoutP() {
     console.log("mouseout from path");
-    this.style.fill = "#ffffff";
+    const zSpot = document.querySelector("#z");
+    if (this === zSpot) {
+        this.style.fill = "#F48D69";
+    } else {
+
+        this.style.fill = "#E3E3E5";
+    }
 }
 
 // function clickP() {

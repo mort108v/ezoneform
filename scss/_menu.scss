@@ -13,7 +13,7 @@
         top: 2rem;
         width: 38px;
         height: 4px;
-        background: set-text-color($primary-color);
+        background: set-text-color($primaryColor);
         @include transition-ease;
         &::before {
             content: '';
@@ -21,7 +21,7 @@
             top: -10px;
             width: 38px;
             height: 4px;
-            background: set-text-color($primary-color);
+            background: set-text-color($primaryColor);
             @include transition-ease;
         }
         &::after {
@@ -30,7 +30,7 @@
             top: 10px;
             width: 28px;
             height: 4px;
-            background: set-text-color($primary-color);
+            background: set-text-color($primaryColor);
             @include transition-ease;
         }
         &.open {
@@ -64,7 +64,7 @@
         justify-content: center;
         height: 100vh;
         overflow: hidden;
-        background: $primary-color;
+        background: $primaryColor;
         list-style-type: none;
         padding-right: 1rem;
         transform: translateY(-100%);
@@ -79,7 +79,7 @@
                 transform: translateX(0);
             }
             &.active>a {
-                color: $secondary-color;
+                color: $secondaryColor;
             }
         }
         &__link {
@@ -90,7 +90,7 @@
             font-weight: 300;
             @include transition-ease;
             &:hover {
-                color: $secondary-color;
+                color: $secondaryColor;
             }
         }
     }

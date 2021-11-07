@@ -5,35 +5,12 @@
 @import 'projects';
 @import 'contact';
 @import 'responsive';
-
-/* FONTS */
-
-@font-face {
-    font-family: 'shapiro5_light_fly';
-    src: url('./fonts/ogj_type_design_-_shapiro_5_light_fly-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_5_light_fly-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'shapiro35_feather_text';
-    src: url('./fonts/ogj_type_design_-_shapiro_35_feather_text-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_35_feather_text-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'shapiro97_air_extd';
-    src: url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import 'fonts';
 body {
-    background: $primary-color;
-    color: set-text-color($primary-color);
+    background: $primaryColor;
+    color: set-text-color($primaryColor);
     height: 100vh;
-    font-family: 'shapiro35_feather_text', Arial, Helvetica, sans-serif;
+    font-family: $shapiro-feather;
     font-weight: 500;
     line-height: 1;
 }
@@ -45,12 +22,15 @@ h3 {
 }
 
 a {
-    color: set-text-color($primary-color);
+    color: set-text-color($primaryColor);
     text-decoration: none;
 }
 
+// .g_to_interact_with {
+//     fill: $orange;
+// }
 .text-secondary {
-    color: $secondary-color;
+    color: $secondaryColor;
 }
 
 header {
@@ -65,13 +45,14 @@ main {
     width: 100%;
     .social-icons {
         position: fixed;
+        z-index: 2;
         top: 2rem;
         left: 2rem;
         a {
             padding: 0.4rem;
             @include transition-ease;
             &:hover {
-                color: $secondary-color;
+                color: $secondaryColor;
             }
         }
     }
@@ -84,5 +65,5 @@ footer {
     right: 1rem;
     text-align: right;
     padding: 1rem;
-    color: set-text-color($primary-color);
+    color: set-text-color($primaryColor);
 }

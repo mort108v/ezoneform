@@ -13,8 +13,8 @@ $blue-pastel: #CACEFC;
 $orange: #F48D69;
 $blue-light: #FFB591;
 $blue-pastel: #F8DDCE;
-$primary-color: $blue-dark;
-$secondary-color: $orange;
+$primaryColor: $blue-dark;
+$secondaryColor: $orange;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -48,4 +48,10 @@ $secondary-color: $orange;
 //     @media screen and (min-width: 1600px) {
 //         @content;
 //     }
+// }
+// :export {
+//     primaryColor: $primaryColor;
+// }
+// :export {
+//     secondaryColor: $secondaryColor;
 // }

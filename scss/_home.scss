@@ -1,28 +1,46 @@
-@font-face {
-    font-family: 'shapiro97_air_extd';
-    src: url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff2') format('woff2'), url('./fonts/ogj_type_design_-_shapiro_97_air_extd-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import 'fonts';
 .home {
     height: 100%;
     padding-top: 40vh;
     overflow: hidden;
     align-items: center;
     text-align: center;
-    background: linear-gradient( to right, rgba($primary-color, 0.7), rgba($primary-color, 0.3)), url('../img/esport-bgr.jpg') center top;
+    background: linear-gradient( to right, rgba($primaryColor, 0.7), rgba($primaryColor, 0.3)), url('../img/esport-bgr.jpg') center top;
     background-size: cover;
-    &__name {
+    &__name--first {
         font-size: 5rem;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
-        color: $primary-color;
-        // border-bottom: 2px solid set-text-color($primary-color);
-        &--last {
-            color: $secondary-color;
-            // font-weight: 700;
-            // font-family: 'shapiro97_air_extd', Arial, Helvetica, sans-serif;
-        }
+        color: $primaryColor;
+        font-family: $shapiro-feather;
+        // border-bottom: 2px solid set-text-color($primaryColor);
     }
+    &__name--last {
+        font-size: 5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $secondaryColor;
+        // font-weight: 700;
+        font-family: $shapiro-fly;
+    }
+    &__name--under {
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $secondaryColor;
+        // font-weight: 700;
+        font-family: $shapiro-fly;
+    }
+    &__under {
+        margin-top: 4rem;
+    }
+}
+
+.menu-logo {
+    padding-top: 2.5vh;
+    align-items: center;
+    text-align: center;
+    // &__logo--svg  {
+    //     fill: $secondaryColor;
+    // }
 }

@@ -7,6 +7,7 @@
     @import 'responsive';
     @import 'fonts';
     @import 'signupform';
+    @import 'buttons';
     body {
         background: $primaryColor;
         color: set-text-color($primaryColor);
@@ -49,6 +50,8 @@
             z-index: 2;
             top: 2rem;
             left: 2rem;
+            display: flex;
+            flex-direction: column;
             a {
                 padding: 0.4rem;
                 @include transition-ease;

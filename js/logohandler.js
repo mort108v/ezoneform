@@ -5,6 +5,8 @@
 let gSpots
 let logoGs
 
+
+
 init()
 
 async function init() {
@@ -30,26 +32,40 @@ function manipulateSVG() {
 
     gSpots.forEach(gSpot => {
 
-        gSpot.style.fill = "#E3E3E5"
+        gSpot.style.fill = "#CACEFC"
+
         gSpot.addEventListener("mouseover", mouseoverP);
         gSpot.addEventListener("mouseout", mouseoutP);
         // pSpot.addEventListener("click", clickP);
+        const zSpot = document.querySelector("#z");
+        zSpot.style.fill = "#F48D69";
     });
+
+
+
 }
 
 function mouseoverP() {
     console.log("mouseover path");
-    this.style.fill = "#F48D69";
+    const zSpot = document.querySelector("#z");
+
+    if (this === zSpot) {
+        this.style.fill = "#CACEFC";
+    } else {
+
+        this.style.fill = "#F48D69";
+    }
 }
 
 function mouseoutP() {
     console.log("mouseout from path");
     const zSpot = document.querySelector("#z");
+
     if (this === zSpot) {
         this.style.fill = "#F48D69";
     } else {
 
-        this.style.fill = "#E3E3E5";
+        this.style.fill = "#CACEFC";
     }
 }
 

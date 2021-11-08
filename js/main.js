@@ -1,7 +1,9 @@
 "use strict"
 
 import './logohandler'
+
 import * as pushScript from '../js/pushplayer.js'
+// import * as imagePushScript from '../js/pushimagefirst'
 import * as getScript from '../js/getplayers.js'
 import * as putScript from '../js/putdata.js'
 
@@ -11,17 +13,17 @@ const nav = document.querySelector('.nav')
 const menuNav = document.querySelector('.menu-nav')
 const navItems = document.querySelectorAll('.menu-nav__item')
 
-const formBtn = document.querySelector('.signup-btn')
+const formNavBtn = document.querySelector('.signup-btn')
 const userForm = document.querySelector('#signup')
 const formNav = document.querySelector('.form-nav')
 const formItems = document.querySelectorAll('.form-nav__item')
+const submitData = document.querySelector(".form-button")
 
 let showMenu = false
 let showSignup = false
 
 menuBtn.addEventListener('click', toggleMenu)
-formBtn.addEventListener('click', toggleForm)
-const submitData = document.querySelector(".form-nav__item--signup")
+formNavBtn.addEventListener('click', toggleForm)
 listenForPlayerInput()
 
 
@@ -62,11 +64,23 @@ function toggleForm() {
     }
 }
 
-export function listenForPlayerInput() {
+function listenForPlayerInput() {
     console.log("player input")
 
-    submitData.addEventListener("click", () => {
-        pushScript.pushPlayer(this)
+    submitData.addEventListener("click", (e) => {
+        pushScript.collectUserData()
+        toggleActiveClass(e)
+        submitData.addEventListener('transitionend', toggleActiveClass);
+        submitData.addEventListener('transitionend', addFinClass);
     })
+}
 
+
+
+function toggleActiveClass() {
+    this.classList.toggle('active');
+}
+
+function addFinClass() {
+    this.classList.add('finished');
 }

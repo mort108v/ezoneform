@@ -11,8 +11,8 @@ $blue: #3E14D6;
 $blue-light: #6259FA;
 $blue-pastel: #CACEFC;
 $orange: #F48D69;
-$blue-light: #FFB591;
-$blue-pastel: #F8DDCE;
+$orange-light: #FFB591;
+$orange-pastel: #F8DDCE;
 $primaryColor: $blue-dark;
 $secondaryColor: $orange;
 * {
@@ -34,11 +34,12 @@ $secondaryColor: $orange;
     }
 }
 
-// @mixin media-md {
-//     @media screen and (min-width: 768px) {
-//         @content;
-//     }
-// }
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
 // @mixin media-lg {
 //     @media screen and (min-width: 1024px) {
 //         @content;

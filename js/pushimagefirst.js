@@ -2,13 +2,7 @@
 
 // import * as main from '../js/main.js'
 
-const gamer = {
-    name: "",
-    gamertag: "",
-    email: "",
-    password: "",
-    image: []
-}
+
 
 // const gamerFiles = {
 //     image: []
@@ -16,43 +10,53 @@ const gamer = {
 
 // collectUserData()
 
-export function collectUserData() {
-    let gamerName = document.querySelector("#name").value
-    let gamerTag = document.querySelector("#gamertag").value
-    let gamerEmail = document.querySelector("#email").value
-    let gamerPass = document.querySelector("#password").value
-    let gamerImage = document.querySelector("#photo").value
-    gamer.name = gamerName
-    gamer.gamertag = gamerTag
-    gamer.email = gamerEmail
-    gamer.password = gamerPass
-    gamer.image = gamerImage
+// export function collectUserData() {
+//     let gamerName = document.querySelector("#name").value
+//     let gamerTag = document.querySelector("#gamertag").value
+//     let gamerEmail = document.querySelector("#email").value
+//     let gamerPass = document.querySelector("#password").value
+//     gamer.name = gamerName
+//     gamer.gamertag = gamerTag
+//     gamer.email = gamerEmail
+//     gamer.password = gamerPass
 
-    let postGamer = JSON.stringify(gamer)
-    pushPlayer(postGamer)
+//     let postGamer = JSON.stringify(gamer)
+//     let gamerImage = document.querySelector("#photo").value
+//     gamer.image = gamerImage
+//     pushPlayer(postGamer, gamerImage)
 
-    // pushPlayerImage(gamerImage)
+//     // pushPlayerImage(gamerImage)
+// }
+
+const gamerfile = {
+    image: []
 }
+
+let gamerImage
+gamerfile.image = document.querySelector("#photo").value
+gamerImage = gamerfile.image
 
 const API_KEY = "61884d7afc71545b0f5e05ad"
 const BASE_URL = "https://users-a042.restdb.io"
 const REST_URL = "/rest/gamers"
-const MEDIA_URL = "/media/"
+const MEDIA_URL = "/media"
 
-async function pushPlayer(gamer) {
+export async function pushPlayerImage(gamerImage) {
     console.log("Pushing a player to db")
-    console.log(gamer)
+    console.log(gamerImage)
 
-    await fetch(BASE_URL + REST_URL, {
+    await fetch(BASE_URL + MEDIA_URL, {
+            formData: "data",
             method: "post",
             headers: {
-                "Content-Type": "application/json; charset=utf-8",
+                "Content-Type": "multipart/form-data",
                 "x-apikey": API_KEY,
                 "cache-control": "no-cache"
             },
-            body: gamer,
+            body: gamerImage,
         })
-        .then(response => response.json())
+        // .then(response => response.json())
+        // .then(console.log(response))
         // .then(pushPlayerImage(id, image))
         // .then(main.displayListFromGet())
 

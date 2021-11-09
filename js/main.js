@@ -18,6 +18,7 @@ const userForm = document.querySelector('#signup')
 const formNav = document.querySelector('.form-nav')
 const formItems = document.querySelectorAll('.form-nav__item')
 const submitData = document.querySelector(".form-button")
+    // const submit = document.querySelector(".submit")
 
 let showMenu = false
 let showSignup = false
@@ -79,23 +80,28 @@ function toggleForm() {
     }
 }
 
+function addActiveClass(element) {
+    console.log("Toggle Active for ", element)
+    element.classList.add('active');
+}
+
+function removeActiveClass(element) {
+    console.log("Toggle Active for ", element)
+    element.classList.remove('active');
+}
+
+function addFinClass() {
+    console.log("Add finished to ", this)
+    this.classList.add('finished');
+}
+
 function listenForPlayerInput() {
     console.log("player input")
 
     submitData.addEventListener("click", (e) => {
-        pushScript.collectUserData()
-        toggleActiveClass(e)
-        submitData.addEventListener('transitionend', toggleActiveClass);
-        submitData.addEventListener('transitionend', addFinClass);
+        addActiveClass(e.currentTarget)
+        e.currentTarget.addEventListener('transitionend', removeActiveClass);
+        // pushScript.collectUserData()
+        e.currentTarget.addEventListener('transitionend', addFinClass);
     })
-}
-
-
-
-function toggleActiveClass() {
-    this.classList.toggle('active');
-}
-
-function addFinClass() {
-    this.classList.add('finished');
 }

@@ -70,3 +70,11 @@
         padding: 1rem;
         color: set-text-color($primaryColor);
     }
+    
+    .menu-logo {
+        padding-top: 2.5vh;
+        flex-grow: 1;
+        &__svg {
+            text-align: center;
+        }
+    }

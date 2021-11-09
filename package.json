@@ -7,12 +7,11 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "netlify-plugin-image-optim": "^0.4.0",
     "sass": "^1.43.4",
     "vite": "^2.6.4"
   },
   "dependencies": {
-    "ajax": "0.0.4",
-    "jquery": "^3.6.0",
     "request": "^2.88.2"
   }
 }

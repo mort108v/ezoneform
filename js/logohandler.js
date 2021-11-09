@@ -10,7 +10,7 @@ let logoGs
 init()
 
 async function init() {
-    let response = await fetch("../img/logo.svg");
+    let response = await fetch("../logo.svg");
     let mySVGdata = await response.text();
     document.querySelector(".menu-logo__svg").innerHTML = mySVGdata;
 

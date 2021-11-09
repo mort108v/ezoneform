@@ -22,7 +22,10 @@ const submitData = document.querySelector(".form-button")
 let showMenu = false
 let showSignup = false
 
-menuBtn.addEventListener('click', toggleMenu)
+menuBtn.addEventListener('click', () => {
+
+    toggleMenu()
+})
 formNavBtn.addEventListener('click', toggleForm)
 listenForPlayerInput()
 
@@ -52,9 +55,9 @@ function toggleForm() {
         userForm.classList.add('open')
         formNav.classList.add('open')
         formItems.forEach(item => item.classList.add('open'))
-
         showSignup = true
     } else {
+
         hamburger.classList.remove('open')
         userForm.classList.remove('open')
         formNav.classList.remove('open')

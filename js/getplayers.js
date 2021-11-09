@@ -1,21 +1,21 @@
 "use strict"
 
-import * as deleteScript from '../js/deleteplayer.js'
+// import * as deleteScript from '../js/deleteplayer.js'
 
-// addEventListener("DOMContentLoaded", init)
-
-const API_KEY = "617812ed8597142da1745ad1"
-const BASE_URL = "https://pokerplayers-806c.restdb.io"
-const REST_URL = "/rest/players"
+const API_KEY = "61884d7afc71545b0f5e05ad"
+const BASE_URL = "https://users-a042.restdb.io"
+const REST_URL = "/rest/gamers"
 const MEDIA_URL = "/media/"
 
 const Player = {
     name: "",
-    age: "",
+    gamertag: "",
     email: "",
-    pic: [],
-    id: ""
+    password: "",
+    image: [],
 }
+
+init()
 
 export async function init() {
 
@@ -58,12 +58,10 @@ function makePlayer(data) {
     const player = Object.create(Player)
 
     player.name = data.name
-    player.age = data.age
+    player.gamertag = data.gamertag
     player.email = data.email
-
-
-    player.pic = data.image[0]
-    player.id = data._id
+    player.password = data.password
+    player.image = data.image[0]
 
     console.log(player)
     return player
@@ -72,21 +70,21 @@ function makePlayer(data) {
 
 function buildPlayerList() {
 
-    document.querySelector("#list tbody").innerHTML = ""
+    document.querySelector("tbody.userinfo__table--tbody").innerHTML = ""
     players.forEach(displayPlayerList)
 }
 
 function displayPlayerList(player) {
 
-    const playerClone = document.querySelector("template#playerTemplate").content.cloneNode(true)
+    const playerClone = document.querySelector("template#aboutinfo").content.cloneNode(true)
 
     playerClone.querySelector("[data-field=name]").textContent = player.name
-    playerClone.querySelector("[data-field=age]").textContent = player.age
+    playerClone.querySelector("[data-field=gamertag]").textContent = player.gamertag
     playerClone.querySelector("[data-field=email]").textContent = player.email
-    playerClone.querySelector(".playerpic").src = BASE_URL + MEDIA_URL + player.pic + "?s=t"
-    playerClone.querySelector("tr").dataset.id = player.id
-    playerClone.querySelector(".subtract").addEventListener("click", () => deleteScript.deletePlayer(player.id))
+    playerClone.querySelector("[data-field=password]").textContent = player.password
+    playerClone.querySelector("[data-field=image]").src = BASE_URL + MEDIA_URL + player.pic + "?s=t"
+        // playerClone.querySelector(".subtract").addEventListener("click", () => deleteScript.deletePlayer(player.id))
 
-    document.querySelector("#list tbody").appendChild(playerClone)
+    document.querySelector("tbody.userinfo__table--tbody").appendChild(playerClone)
 
 }

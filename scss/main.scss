@@ -8,6 +8,7 @@
     @import 'fonts';
     @import 'signupform';
     @import 'buttons';
+    @import 'user';
     body {
         background: $primaryColor;
         color: set-text-color($primaryColor);

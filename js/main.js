@@ -2,10 +2,10 @@
 
 import './logohandler'
 
-import * as pushScript from '../js/pushplayer.js'
+import * as pushScript from './pushplayer.js'
 // import * as imagePushScript from '../js/pushimagefirst'
-import * as getScript from '../js/getplayers.js'
-import * as putScript from '../js/putdata.js'
+import * as getScript from './getplayers.js'
+import * as putScript from './putdata.js'
 
 const menuBtn = document.querySelector('.menu-btn')
 const hamburger = document.querySelector('.menu-btn__burger')
@@ -18,7 +18,8 @@ const userForm = document.querySelector('#signup')
 const formNav = document.querySelector('.form-nav')
 const formItems = document.querySelectorAll('.form-nav__item')
 const submitData = document.querySelector(".form-button")
-    // const submit = document.querySelector(".submit")
+
+const showGamers = document.querySelector(".submit")
 
 let showMenu = false
 let showSignup = false
@@ -104,4 +105,8 @@ function listenForPlayerInput() {
         pushScript.collectUserData()
         e.currentTarget.addEventListener('transitionend', addFinClass);
     })
+}
+
+function displayListFromGet() {
+    getScript.init()
 }

@@ -36,6 +36,10 @@
 
 .menu-logo {
     padding-top: 2.5vh;
-    align-items: center;
-    text-align: center;
+    flex-grow: 1;
+    // align-items: center;
+    // text-align: center;
+    &__svg {
+        text-align: center;
+    }
 }

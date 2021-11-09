@@ -1,14 +1,14 @@
 .menu-btn {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    right: 1rem;
-    top: 1rem;
-    height: 28px;
-    width: 38px;
+    // right: 1rem;
+    // top: 1rem;
+    // height: 28px;
+    // width: 38px;
     cursor: pointer;
     @include transition-ease;
     &:hover {
-        color: $secondaryColor;
+        background: set-text-color($secondaryColor);
     }
     &__burger {
         position: absolute;

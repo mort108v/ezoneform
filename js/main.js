@@ -101,7 +101,7 @@ function listenForPlayerInput() {
     submitData.addEventListener("click", (e) => {
         addActiveClass(e.currentTarget)
         e.currentTarget.addEventListener('transitionend', removeActiveClass);
-        // pushScript.collectUserData()
+        pushScript.collectUserData()
         e.currentTarget.addEventListener('transitionend', addFinClass);
     })
 }

@@ -28,11 +28,16 @@ menuBtn.addEventListener('click', () => {
 
     toggleMenu()
 })
-formNavBtn.addEventListener('click', toggleForm)
+
 
 $(function() {
     if ($('body').is('#home')) {
         listenForPlayerInput()
+    }
+});
+$(function() {
+    if ($('body').is('#home')) {
+        formNavBtn.addEventListener('click', toggleForm)
     }
 });
 

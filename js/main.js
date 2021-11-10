@@ -114,7 +114,7 @@ function listenForPlayerInput() {
 
 async function loadUsersPage() {
     await new Promise(resolve => setTimeout(resolve, 3000));
-    window.location = "user.html"
+    window.location = "../user.html"
 }
 
 // displayListFromGet()

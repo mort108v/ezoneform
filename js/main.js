@@ -36,9 +36,6 @@ $(function() {
     }
 });
 
-
-
-
 function toggleMenu() {
 
     if (!showMenu) {

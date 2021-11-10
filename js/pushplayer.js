@@ -1,6 +1,6 @@
 "use strict"
 
-import * as main from './main.js'
+// import * as main from './main.js'
 
 const gamer = {
     name: "",

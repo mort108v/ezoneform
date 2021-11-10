@@ -4,8 +4,8 @@ import './logohandler'
 
 import * as pushScript from './pushplayer.js'
 // import * as imagePushScript from '../js/pushimagefirst'
-import * as getScript from './getplayers.js'
-import * as putScript from './putdata.js'
+// import * as getScript from './getplayers.js'
+// import * as putScript from './putdata.js'
 
 const menuBtn = document.querySelector('.menu-btn')
 const hamburger = document.querySelector('.menu-btn__burger')
@@ -29,7 +29,14 @@ menuBtn.addEventListener('click', () => {
     toggleMenu()
 })
 formNavBtn.addEventListener('click', toggleForm)
-listenForPlayerInput()
+
+$(function() {
+    if ($('body').is('#home')) {
+        listenForPlayerInput()
+    }
+});
+
+
 
 
 function toggleMenu() {
@@ -82,12 +89,12 @@ function toggleForm() {
 }
 
 function addActiveClass(element) {
-    console.log("Toggle Active for ", element)
+    console.log("Add Active for ", element)
     element.classList.add('active');
 }
 
 function removeActiveClass(element) {
-    console.log("Toggle Active for ", element)
+    console.log("Remove Active for ", element)
     element.classList.remove('active');
 }
 
@@ -100,13 +107,20 @@ function listenForPlayerInput() {
     console.log("player input")
 
     submitData.addEventListener("click", (e) => {
+        pushScript.collectUserData()
         addActiveClass(e.currentTarget)
         e.currentTarget.addEventListener('transitionend', removeActiveClass);
-        pushScript.collectUserData()
         e.currentTarget.addEventListener('transitionend', addFinClass);
+        e.currentTarget.addEventListener('transitionend', loadUsersPage);
     })
 }
 
-function displayListFromGet() {
-    getScript.init()
+function loadUsersPage() {
+    window.location = "user.html"
 }
+
+// displayListFromGet()
+
+// function displayListFromGet() {
+//     getScript.init()
+// }

@@ -17,7 +17,7 @@ const Player = {
 
 init()
 
-export async function init() {
+async function init() {
 
     await fetch(BASE_URL + REST_URL, {
             method: "get",
@@ -70,7 +70,7 @@ function makePlayer(data) {
 
 function buildPlayerList() {
 
-    document.querySelector("tbody.userinfo__table--tbody").innerHTML = ""
+    document.querySelector(".userinfo tbody.userinfo__table--tbody").innerHTML = ""
     players.forEach(displayPlayerList)
 }
 
@@ -82,9 +82,9 @@ function displayPlayerList(player) {
     playerClone.querySelector("[data-field=gamertag]").textContent = player.gamertag
     playerClone.querySelector("[data-field=email]").textContent = player.email
     playerClone.querySelector("[data-field=password]").textContent = player.password
-    playerClone.querySelector("[data-field=image]").src = BASE_URL + MEDIA_URL + player.pic + "?s=t"
+        // playerClone.querySelector("[data-field=image]").src = BASE_URL + MEDIA_URL + player.pic + "?s=t"
         // playerClone.querySelector(".subtract").addEventListener("click", () => deleteScript.deletePlayer(player.id))
 
-    document.querySelector("tbody.userinfo__table--tbody").appendChild(playerClone)
+    document.querySelector(".userinfo tbody.userinfo__table--tbody").appendChild(playerClone)
 
 }

@@ -19,19 +19,18 @@
     }
     &__table {
         display: inline-table;
-        // align-content: center;
-        // text-align: center;
-        // justify-content: center;
-        // align-self: center;
-        &--row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        text-align: left;
+        width: 80vw;
+        &--head {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
             grid-gap: 2rem;
+            border-top: 2px solid set-text-color($primaryColor);
+            border-bottom: 2px solid set-text-color($primaryColor);
         }
-        &--tbody {
-            display: grid;
-            // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-gap: 2rem;
+        &--tbody td {
+            padding-top: 1.5rem;
+            grid-gap: 1.5rem;
         }
     }
 }

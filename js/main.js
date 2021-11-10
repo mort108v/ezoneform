@@ -112,7 +112,8 @@ function listenForPlayerInput() {
     })
 }
 
-function loadUsersPage() {
+async function loadUsersPage() {
+    await new Promise(resolve => setTimeout(resolve, 3000));
     window.location = "user.html"
 }
 
